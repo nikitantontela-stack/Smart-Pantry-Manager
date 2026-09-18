@@ -42,4 +42,6 @@ public interface PantryDAO {
     // Used on first app launch to check if I still need to seed the recipe list
     @Query("SELECT COUNT(*) FROM recipes")
     int getRecipeCount();
+    @Query("SELECT * FROM pantry_items WHERE id = :itemId")
+    PantryItem getPantryItemById(int itemId);
 }

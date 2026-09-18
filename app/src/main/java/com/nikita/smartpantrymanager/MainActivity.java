@@ -1,6 +1,7 @@
 package com.nikita.smartpantrymanager;
 
 import android.os.Bundle;
+import android.content.Intent;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,8 +46,8 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.OnI
         db.pantryDAO().getAllPantryItems().observe(this, this::updatePantryList);
 
         fabAddItem.setOnClickListener(v -> {
-            // I put this placeholder here until I build the Add/Edit screen
-            Toast.makeText(this, "Add item screen coming next", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, AddEditItemActivity.class);
+            startActivity(intent);
         });
     }
 
@@ -57,8 +58,9 @@ public class MainActivity extends AppCompatActivity implements PantryAdapter.OnI
 
     @Override
     public void onEditClick(PantryItem item) {
-        // I put this placeholder here until I build the Add/Edit screen
-        Toast.makeText(this, "Edit: " + item.getName(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(MainActivity.this, AddEditItemActivity.class);
+        intent.putExtra(AddEditItemActivity.EXTRA_ITEM_ID, item.getId());
+        startActivity(intent);
     }
 
     @Override

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editTextItemName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingredient name (e.g. Tomato)"
+        android:inputType="textCapSentences" />
+
+    <EditText
+        android:id="@+id/editTextItemQuantity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Quantity (e.g. 2)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/editTextItemUnit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Unit (e.g. pcs, g, ml)"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/editTextExpiryDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:hint="Expiry date (yyyy-mm-dd, optional)"
+        android:inputType="date" />
+
+    <Button
+        android:id="@+id/buttonSaveItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Save" />
+
+</LinearLayout>
